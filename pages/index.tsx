@@ -28,6 +28,7 @@ const Index = () => {
       <Layout>
         <Head>
           <title>NoteBook</title>
+          <link rel="icon" href="/favicon.ico" />
         </Head>
         <Container className="main-container">
           <Intro />
