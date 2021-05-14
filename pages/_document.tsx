@@ -4,7 +4,9 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="ja">
-        <Head />
+        <Head>
+          <link rel="manifest" href="/site.webmanifest" />
+        </Head>
         <body>
           <Main />
           <NextScript />
