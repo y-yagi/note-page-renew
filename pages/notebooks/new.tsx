@@ -1,8 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
-import { useCollection } from "@nandorojo/swr-firestore";
 import { useRouter } from "next/router";
-import * as firebase from "firebase/app";
 import { useUser } from "../../lib/useUser";
 import Layout from "../../components/layout";
 import Notebook from "../../types/notebook";
@@ -15,7 +12,6 @@ import { fuego } from "@nandorojo/swr-firestore";
 const New = () => {
   const { user } = useUser();
   const router = useRouter();
-  const { book } = router.query;
 
   const notebook: Notebook = {
     id: "",

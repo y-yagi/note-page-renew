@@ -1,5 +1,5 @@
 import { Formik } from "formik";
-import { Button, Form, Dimmer, Loader } from "semantic-ui-react";
+import { Button, Form } from "semantic-ui-react";
 import { useRouter } from "next/router";
 import { NextPage } from "next";
 import Notebook from "../types/notebook";

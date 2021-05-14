@@ -4,7 +4,6 @@ import TextareaAutosize from "react-textarea-autosize";
 import { Button, Form, Dimmer, Loader } from "semantic-ui-react";
 import { useRouter } from "next/router";
 import { NextPage } from "next";
-import { useUser } from "../lib/useUser";
 
 interface Props {
   page: Page;

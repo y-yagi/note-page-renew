@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import { useCollection } from "@nandorojo/swr-firestore";
 import { useRouter } from "next/router";
 import * as firebase from "firebase/app";

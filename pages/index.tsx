@@ -8,7 +8,7 @@ import React from "react";
 import { Container } from "semantic-ui-react";
 
 const Index = () => {
-  const { user, logout } = useUser();
+  const { user } = useUser();
 
   if (!user) {
     return (
