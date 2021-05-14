@@ -2,7 +2,7 @@ import { AppProps } from "next/app";
 import "semantic-ui-css/semantic.css";
 import "../styles/index.css";
 import React from "react";
-import { useEffect } from "react"
+import { useEffect } from "react";
 import "firebase/firestore";
 import "firebase/auth";
 import { Fuego, FuegoProvider } from "@nandorojo/swr-firestore";
@@ -18,11 +18,14 @@ const fuego = new Fuego(firebaseConfig);
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    if("serviceWorker" in navigator) {
+    if ("serviceWorker" in navigator) {
       window.addEventListener("load", function () {
-       navigator.serviceWorker.register("/sw.js").then(
+        navigator.serviceWorker.register("/sw.js").then(
           function (registration) {
-            console.log("Service Worker registration successful with scope: ", registration.scope);
+            console.log(
+              "Service Worker registration successful with scope: ",
+              registration.scope
+            );
           },
           function (err) {
             console.log("Service Worker registration failed: ", err);
@@ -30,8 +33,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         );
       });
     }
-  }, [])
-
+  }, []);
 
   return (
     <FuegoProvider fuego={fuego}>
