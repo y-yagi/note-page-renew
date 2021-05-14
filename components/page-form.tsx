@@ -58,7 +58,20 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
                 data-testid="pagecontent"
               />
             </Form.Field>
-            <Button type="submit" disabled={isSubmitting} color="blue">
+            <Button
+              type="button"
+              color="red"
+              floated="left"
+              onClick={() => router.back()}
+            >
+              cancel
+            </Button>
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              color="blue"
+              floated="right"
+            >
               submit
             </Button>
           </Form>
