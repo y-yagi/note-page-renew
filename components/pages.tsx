@@ -149,7 +149,6 @@ const Pages = () => {
           Create a new page
         </Button>
       </Link>
-      {destroyNotebook()}
       <Segment>
         <Tab
           panes={panes(data)}
@@ -158,6 +157,7 @@ const Pages = () => {
           onTabChange={handleTabChange}
         />
       </Segment>
+      {destroyNotebook()}
     </>
   );
 };
