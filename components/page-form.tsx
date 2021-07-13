@@ -1,15 +1,9 @@
 import Page from "../types/page";
 import { Formik } from "formik";
 import TextareaAutosize from "react-textarea-autosize";
-import { Button, Form, Tab, TabPane, TabPaneProps } from "semantic-ui-react";
+import { Button, Form, Dimmer, Loader } from "semantic-ui-react";
 import { useRouter } from "next/router";
 import { NextPage } from "next";
-import { useState, ChangeEventHandler } from "react";
-import ReactMarkdown from "react-markdown";
-import gfm from "remark-gfm";
-
-// NOTE: use `require` to avoid "Could not find a declaration file for module" error.
-const WithOnChangeHandler = require("formik-form-callbacks");
 
 interface Props {
   page: Page;
@@ -18,41 +12,9 @@ interface Props {
 
 const PageForm: NextPage<Props> = ({ page, action }) => {
   const router = useRouter();
-  const [contentForPreview, setContentForPreview] = useState(page.content);
 
   function scrollToBottom(): void {
     window.scrollTo(0, document.body.scrollHeight);
-  }
-
-  function panes(content: string, handleChange: ChangeEventHandler) {
-    const panes: any = [
-      {
-        menuItem: "Write",
-        render: () => (
-          <Tab.Pane attached={false}>
-            <TextareaAutosize
-              name="content"
-              placeholder="Content"
-              required
-              value={content}
-              onChange={handleChange}
-              onHeightChange={scrollToBottom}
-              data-testid="pagecontent"
-            />
-          </Tab.Pane>
-        ),
-      },
-      {
-        menuItem: "Preview",
-        render: () => (
-          <Tab.Pane attached={false}>
-            <ReactMarkdown plugins={[gfm]} children={contentForPreview} />
-          </Tab.Pane>
-        ),
-      },
-    ];
-
-    return panes;
   }
 
   return (
@@ -86,14 +48,14 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
             </Form.Field>
             <Form.Field required>
               <label>Content</label>
-              <WithOnChangeHandler>
-                {({ values }: { values: any }) =>
-                  setContentForPreview(values["content"])
-                }
-              </WithOnChangeHandler>
-              <Tab
-                panes={panes(values.content, handleChange)}
-                menu={{ pointing: true }}
+              <TextareaAutosize
+                name="content"
+                placeholder="Content"
+                required
+                value={values.content}
+                onChange={handleChange}
+                onHeightChange={scrollToBottom}
+                data-testid="pagecontent"
               />
             </Form.Field>
             <Button
