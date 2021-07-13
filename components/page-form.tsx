@@ -1,9 +1,12 @@
 import Page from "../types/page";
 import { Formik } from "formik";
 import TextareaAutosize from "react-textarea-autosize";
-import { Button, Form, Dimmer, Loader } from "semantic-ui-react";
+import { Button, Form, Tab, TabPane, TabPaneProps } from "semantic-ui-react";
 import { useRouter } from "next/router";
 import { NextPage } from "next";
+import { useState, ChangeEventHandler, SyntheticEvent } from "react";
+import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 
 interface Props {
   page: Page;
@@ -12,9 +15,47 @@ interface Props {
 
 const PageForm: NextPage<Props> = ({ page, action }) => {
   const router = useRouter();
+  const [contentForPreview, setContentForPreview] = useState(page.content);
 
   function scrollToBottom(): void {
     window.scrollTo(0, document.body.scrollHeight);
+  }
+
+  function panes(content: string, handleChange: ChangeEventHandler) {
+    const panes: any = [
+      {
+        menuItem: "Write",
+        render: () => (
+          <Tab.Pane attached={false}>
+            <TextareaAutosize
+              name="content"
+              placeholder="Content"
+              required
+              value={content}
+              onChange={handleChange}
+              onHeightChange={scrollToBottom}
+              data-testid="pagecontent"
+            />
+          </Tab.Pane>
+        ),
+      },
+      {
+        menuItem: "Preview",
+        render: () => (
+          <Tab.Pane attached={false}>
+            <ReactMarkdown plugins={[gfm]} children={contentForPreview} />
+          </Tab.Pane>
+        ),
+      },
+    ];
+
+    return panes;
+  }
+
+  function handleFormChange(e: SyntheticEvent) {
+    const element = e.target as HTMLElement;
+    if (element.getAttribute("name") === "content")
+      [setContentForPreview((element as HTMLTextAreaElement).value)];
   }
 
   return (
@@ -34,7 +75,7 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
         enableReinitialize={true}
       >
         {({ values, handleChange, handleSubmit, isSubmitting }) => (
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} onChange={handleFormChange}>
             <Form.Field required>
               <label>Page Name</label>
               <input
@@ -48,14 +89,9 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
             </Form.Field>
             <Form.Field required>
               <label>Content</label>
-              <TextareaAutosize
-                name="content"
-                placeholder="Content"
-                required
-                value={values.content}
-                onChange={handleChange}
-                onHeightChange={scrollToBottom}
-                data-testid="pagecontent"
+              <Tab
+                panes={panes(values.content, handleChange)}
+                menu={{ pointing: true }}
               />
             </Form.Field>
             <Button
