@@ -1,0 +1,7 @@
+{
+  "extends": "next",
+  "rules": {
+    "react/display-name": "warn",
+    "react/no-children-prop": "warn"
+  }
+}
