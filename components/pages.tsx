@@ -89,7 +89,7 @@ const Pages = () => {
             >
               Destroy
             </Button>
-            <Link href={`/pages/${page.id}?book=${noteBookPath}`}>
+            <Link href={`/pages/${page.id}?book=${noteBookPath}`} passHref>
               <Button type="submit" floated="right" color="blue" size="mini">
                 Edit
               </Button>
@@ -144,7 +144,7 @@ const Pages = () => {
         />
       </Header>
       <Divider hidden section />
-      <Link href={`/pages/new?book=${noteBookPath}`}>
+      <Link href={`/pages/new?book=${noteBookPath}`} passHref>
         <Button as="a" color="blue">
           Create a new page
         </Button>
