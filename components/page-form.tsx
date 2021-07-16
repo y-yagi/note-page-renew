@@ -1,7 +1,7 @@
 import Page from "../types/page";
 import { Formik } from "formik";
 import TextareaAutosize from "react-textarea-autosize";
-import { Button, Form, Tab, TabPane, TabPaneProps } from "semantic-ui-react";
+import { Button, Form, Tab } from "semantic-ui-react";
 import { useRouter } from "next/router";
 import { NextPage } from "next";
 import { useState, ChangeEventHandler, SyntheticEvent } from "react";
