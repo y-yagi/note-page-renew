@@ -7,7 +7,7 @@ beforeEach(() => {
 describe("Index", () => {
   it("Show page", () => {
     cy.visit("http://localhost:3000");
-    cy.contains("Sign").click();
-    cy.contains("NoteBooks");
+    cy.contains("Sign in").click();
+    cy.contains("Please Sign in");
   });
 });
