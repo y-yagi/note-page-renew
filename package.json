@@ -17,7 +17,7 @@
     "date-fns": "2.22.1",
     "firebase": "^7.24.0",
     "formik": "^2.2.9",
-    "gray-matter": "4.0.2",
+    "gray-matter": "4.0.3",
     "js-cookie": "^2.2.1",
     "next": "^11.0.0",
     "react": "^16.14.0",
