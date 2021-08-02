@@ -44,7 +44,7 @@
     "@types/react-dom": "^17.0.9",
     "@types/react-linkify": "^1.0.1",
     "cypress": "^7.1.0",
-    "eslint": "^7.31.0",
+    "eslint": "^7.32.0",
     "eslint-config-next": "^11.0.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-unused-imports": "^1.1.2",
