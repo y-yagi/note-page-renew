@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useCollection } from "@nandorojo/swr-firestore";
 import { useRouter } from "next/router";
-import * as firebase from "firebase/app";
+import firebase from "firebase/app";
 import { useUser } from "../../lib/useUser";
 import Layout from "../../components/layout";
 import Page from "../../types/page";
