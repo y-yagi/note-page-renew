@@ -1174,10 +1174,10 @@
     lz-string "^1.4.4"
     pretty-format "^27.0.2"
 
-"@testing-library/react@^12.0.0":
-  version "12.0.0"
-  resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-12.0.0.tgz#9aeb2264521522ab9b68f519eaf15136148f164a"
-  integrity sha512-sh3jhFgEshFyJ/0IxGltRhwZv2kFKfJ3fN1vTZ6hhMXzz9ZbbcTgmDYM4e+zJv+oiVKKEWZPyqPAh4MQBI65gA==
+"@testing-library/react@^12.1.0":
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-12.1.0.tgz#3e9a4002b0b8f986a738a2f88fc458b5af319f35"
+  integrity sha512-Ge3Ht3qXE82Yv9lyPpQ7ZWgzo/HgOcHu569Y4ZGWcZME38iOFiOg87qnu6hTEa8jTJVL7zYovnvD3GE2nsNIoQ==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@testing-library/dom" "^8.0.0"
@@ -7133,10 +7133,10 @@ remark-gfm@^1.0.0:
     mdast-util-gfm "^0.1.0"
     micromark-extension-gfm "^0.3.0"
 
-remark-html@14.0.0:
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/remark-html/-/remark-html-14.0.0.tgz#48f5d1e3e0d6dfe957153f27fe11024c2432d1e1"
-  integrity sha512-ISQjSlOI3Hb99REjDz0cAhPJVJZDednsj4GNj4Ve7DEZdEXhVPOzBvym0Di+1K3p/RmKXqSw0r02JDmtATh6Dw==
+remark-html@14.0.1:
+  version "14.0.1"
+  resolved "https://registry.yarnpkg.com/remark-html/-/remark-html-14.0.1.tgz#2118516604c1a6c2ea9d5914a526942554e04e30"
+  integrity sha512-a/x5bTlFrkwYkz43zuJIk0m0IuS5Rx8zLztGwdzmAdUj0Hsi4C4nkJ8gTQRNXY/ET/gMrqQORMMI0arRItq/aQ==
   dependencies:
     "@types/mdast" "^3.0.0"
     hast-util-sanitize "^4.0.0"
