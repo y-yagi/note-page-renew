@@ -70,7 +70,7 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
         }}
         onSubmit={(values, { setSubmitting }) => {
           action(values["name"], values["content"]);
-          router.push("/");
+          router.push(`/?book=${page.noteBookId}`);
         }}
         enableReinitialize={true}
       >

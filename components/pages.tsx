@@ -27,7 +27,9 @@ const Pages = () => {
   const { user } = useUser();
   const notebookCollection = `notebooks-renew/${user?.id}/notebooks/`;
   const router = useRouter();
-  const [noteBookPath, setNoteBookPath] = useState("default");
+  const [noteBookPath, setNoteBookPath] = useState(() => {
+    return router.query["book"] || "default";
+  });
   const [tabActiveIndex, setTabActiveIndex] = useState(0);
 
   const { data, error } = useCollection<Page>(
