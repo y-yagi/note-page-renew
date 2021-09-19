@@ -17,8 +17,8 @@ const New = () => {
 
   const page: Page = {
     id: "",
-    userId: "",
-    noteBookId: "",
+    userId: user?.id || "",
+    noteBookId: book as string,
     name: "",
     content: "",
     createdAt: new Date(),
