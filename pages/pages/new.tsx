@@ -33,8 +33,8 @@ const New = () => {
     return <Signin />;
   }
 
-  function submit(name: string, content: string) {
-    add({
+  async function submit(name: string, content: string) {
+    await add({
       name: name,
       content: content,
       userId: user?.id,

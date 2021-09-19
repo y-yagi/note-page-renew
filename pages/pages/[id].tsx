@@ -17,8 +17,8 @@ const Edit = () => {
   const collection = `notebooks-renew/${user?.id}/notebooks/${book}/pages/${id}`;
   const { data, update, error } = useDocument<Page>(collection);
 
-  function submit(name: string, content: string) {
-    update({
+  async function submit(name: string, content: string) {
+    await update({
       name: name,
       content: content,
       updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
