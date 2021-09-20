@@ -82,7 +82,7 @@ const Pages = () => {
               size="mini"
               onClick={() => {
                 if (
-                  window.confirm("Are you sure you wish to delete this item?")
+                  window.confirm("Are you sure you wish to delete this page?")
                 )
                   deleteDocument(
                     `${notebookCollection}${noteBookPath}/pages/${page.id}`
@@ -126,7 +126,7 @@ const Pages = () => {
         floated="right"
         color="red"
         onClick={() => {
-          if (window.confirm("Are you sure you wish to delete this item?"))
+          if (window.confirm("Are you sure you wish to delete this notebook?"))
             deleteDocument(`${notebookCollection}${noteBookPath}`);
           setNoteBookPath("default");
         }}
