@@ -120,6 +120,7 @@ const Pages = () => {
   function destroyNotebook() {
     if (noteBookPath === "default") return "";
 
+    // TODO: Should delete subcollection also?
     return (
       <Button
         type="submit"
