@@ -36,7 +36,7 @@ const Edit = () => {
     <>
       <Layout>
         <Head>
-          <title>Okini</title>
+          <title>NoteBook</title>
         </Head>
         <Container className="main-container">
           <Intro />

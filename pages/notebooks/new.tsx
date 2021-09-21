@@ -30,7 +30,7 @@ const New = () => {
     <>
       <Layout>
         <Head>
-          <title>Okini</title>
+          <title>NoteBook</title>
         </Head>
         <Container>
           <Intro />
