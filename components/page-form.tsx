@@ -5,7 +5,10 @@ import { Button, Form } from "semantic-ui-react";
 import { useRouter } from "next/router";
 import { NextPage } from "next";
 import { useState } from "react";
-import { SimpleMdeReact } from "react-simplemde-editor";
+import dynamic from "next/dynamic";
+const SimpleMdeReact = dynamic(import("react-simplemde-editor"), {
+  ssr: false,
+});
 import SimpleMDE from "easymde";
 import "easymde/dist/easymde.min.css";
 
