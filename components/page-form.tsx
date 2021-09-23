@@ -1,29 +1,41 @@
-import Page from "../types/page";
-import { Formik } from "formik";
-import { useMemo } from "react";
-import { Button, Form } from "semantic-ui-react";
-import { useRouter } from "next/router";
+import { useState, useEffect, useMemo } from "react";
 import { NextPage } from "next";
-import { useState } from "react";
+import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
-const SimpleMdeReact = dynamic(import("react-simplemde-editor"), {
-  ssr: false,
-});
+import { Formik } from "formik";
 import SimpleMDE from "easymde";
+import { Button, Form } from "semantic-ui-react";
+import { SemanticToastContainer, toast } from "react-semantic-toasts";
 import "easymde/dist/easymde.min.css";
+import "react-semantic-toasts/styles/react-semantic-alert.css";
+import Page from "../types/page";
 
 interface Props {
   page: Page;
   action: Function;
 }
 
+const SimpleMdeReact = dynamic(import("react-simplemde-editor"), {
+  ssr: false,
+});
+
 const PageForm: NextPage<Props> = ({ page, action }) => {
   const router = useRouter();
   const [content, setContent] = useState(page.content);
 
-  function onMDEchange(value: string) {
+  const handleKeyPress = (e: KeyboardEvent) => {
+    if (page.id !== "" && e.ctrlKey && e.key === "s") {
+      e.preventDefault();
+      action(page.name, content);
+      setTimeout(() => {
+        toast({ title: "info", description: "Updated!" });
+      }, 1000);
+    }
+  };
+
+  const onMDEchange = (value: string) => {
     setContent(value);
-  }
+  };
 
   const simpleMDEOptions = useMemo(() => {
     return {
@@ -32,8 +44,17 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
     } as SimpleMDE.Options;
   }, []);
 
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  });
+
   return (
     <section>
+      <SemanticToastContainer />
       <h3 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
         Pages
       </h3>
