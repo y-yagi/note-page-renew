@@ -21,7 +21,7 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
   const router = useRouter();
   const [content, setContent] = useState(page.content);
 
-  function onMDEchange(value: string) {
+  const onMDEchange = (value: string) => {
     setContent(value);
   }
 
