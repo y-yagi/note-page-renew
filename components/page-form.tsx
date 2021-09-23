@@ -12,6 +12,8 @@ const SimpleMdeReact = dynamic(import("react-simplemde-editor"), {
 import SimpleMDE from "easymde";
 import "easymde/dist/easymde.min.css";
 import { useEffect } from "react";
+import { SemanticToastContainer, toast } from "react-semantic-toasts";
+import "react-semantic-toasts/styles/react-semantic-alert.css";
 
 interface Props {
   page: Page;
@@ -26,7 +28,9 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
     if (page.id !== "" && e.ctrlKey && e.key === "s") {
       e.preventDefault();
       action(page.name, content);
-      console.log("save!");
+      setTimeout(() => {
+        toast({ title: "info", description: "Updated!" });
+      }, 1000);
     }
   };
 
@@ -51,6 +55,7 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
 
   return (
     <section>
+      <SemanticToastContainer />
       <h3 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
         Pages
       </h3>
