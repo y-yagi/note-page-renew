@@ -11,6 +11,7 @@ const SimpleMdeReact = dynamic(import("react-simplemde-editor"), {
 });
 import SimpleMDE from "easymde";
 import "easymde/dist/easymde.min.css";
+import { useEffect } from "react";
 
 interface Props {
   page: Page;
@@ -21,9 +22,17 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
   const router = useRouter();
   const [content, setContent] = useState(page.content);
 
+  const handleKeyPress = (e: KeyboardEvent) => {
+    if (page.id !== "" && e.ctrlKey && e.key === "s") {
+      e.preventDefault();
+      action(page.name, content);
+      console.log("save!");
+    }
+  };
+
   const onMDEchange = (value: string) => {
     setContent(value);
-  }
+  };
 
   const simpleMDEOptions = useMemo(() => {
     return {
@@ -31,6 +40,14 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
       spellChecker: false,
     } as SimpleMDE.Options;
   }, []);
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  });
 
   return (
     <section>
