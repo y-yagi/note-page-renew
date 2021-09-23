@@ -1,24 +1,23 @@
-import Page from "../types/page";
-import { Formik } from "formik";
-import { useMemo } from "react";
-import { Button, Form } from "semantic-ui-react";
-import { useRouter } from "next/router";
+import { useState, useEffect, useMemo } from "react";
 import { NextPage } from "next";
-import { useState } from "react";
+import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
-const SimpleMdeReact = dynamic(import("react-simplemde-editor"), {
-  ssr: false,
-});
+import { Formik } from "formik";
 import SimpleMDE from "easymde";
-import "easymde/dist/easymde.min.css";
-import { useEffect } from "react";
+import { Button, Form } from "semantic-ui-react";
 import { SemanticToastContainer, toast } from "react-semantic-toasts";
+import "easymde/dist/easymde.min.css";
 import "react-semantic-toasts/styles/react-semantic-alert.css";
+import Page from "../types/page";
 
 interface Props {
   page: Page;
   action: Function;
 }
+
+const SimpleMdeReact = dynamic(import("react-simplemde-editor"), {
+  ssr: false,
+});
 
 const PageForm: NextPage<Props> = ({ page, action }) => {
   const router = useRouter();
