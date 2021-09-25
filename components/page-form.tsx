@@ -44,6 +44,7 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
     return {
       autofocus: true,
       spellChecker: false,
+      inputStyle: "textarea",
     } as SimpleMDE.Options;
   }, []);
 
