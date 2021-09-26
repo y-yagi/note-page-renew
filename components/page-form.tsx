@@ -45,6 +45,7 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
       autofocus: true,
       spellChecker: false,
       inputStyle: "textarea",
+      hideIcons: ["itaclic", "quote", "image", "link", "guide"],
     } as SimpleMDE.Options;
   }, []);
 
