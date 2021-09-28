@@ -26,13 +26,15 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
   const handleKeyPress = (e: KeyboardEvent) => {
     if (page.id !== "" && e.ctrlKey && e.key === "s") {
       e.preventDefault();
+      let msg = "Content doesn't changed";
 
       if (page.content !== content) {
         action(page.name, content);
-        setTimeout(() => {
-          toast({ title: "info", description: "Updated!" });
-        }, 1000);
+        msg = "Updated!";
       }
+      setTimeout(() => {
+        toast({ title: "info", description: msg });
+      }, 1000);
     }
   };
 
