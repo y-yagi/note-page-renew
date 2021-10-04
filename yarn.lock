@@ -6802,10 +6802,10 @@ react-semantic-toasts@^0.6.5:
   resolved "https://registry.yarnpkg.com/react-semantic-toasts/-/react-semantic-toasts-0.6.5.tgz#d35b7dacf821860b85683d6d875c08f68a83f3e9"
   integrity sha512-XsSvlix69XbzXkT728sRx9TnP7c7g8rGf31KS37Hf/DQLEuAJzsUwqHmo70Q6u7tIcWbCF58UnCzg9mNlYlijA==
 
-react-simplemde-editor@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/react-simplemde-editor/-/react-simplemde-editor-5.0.1.tgz#f9157e640be2c5ca7c8e236f9d138d5e6adb21cb"
-  integrity sha512-qFWxcBo9P6B8vfdPDyuaOlfwM9+ExLXplWAR2r/Drc1wGftQbwCDlSzgVlp8R0vsIBFdm+OtR8fxk4mJJKn0OA==
+react-simplemde-editor@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/react-simplemde-editor/-/react-simplemde-editor-5.0.2.tgz#0e18cdc8f1e15824c595e6328d6808fcbceb75ce"
+  integrity sha512-yaqZSaUBf6B0kQY0mH8WP/nHnvJFz48aO8cMYCL1e/AFiuB/H8UDuyZFP9/exOtwVpaG373HYR1YedKMtCh+Kw==
   dependencies:
     "@types/codemirror" "0.0.109"
     "@types/marked" "^2.0.2"

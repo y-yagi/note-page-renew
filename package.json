@@ -27,7 +27,7 @@
     "react-linkify": "^1.0.0-alpha",
     "react-markdown": "^7.0.1",
     "react-semantic-toasts": "^0.6.5",
-    "react-simplemde-editor": "^5.0.1",
+    "react-simplemde-editor": "^5.0.2",
     "remark": "14.0.1",
     "remark-gfm": "^2.0.0",
     "remark-html": "14.0.1",
