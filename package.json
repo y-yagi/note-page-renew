@@ -29,7 +29,7 @@
     "react-semantic-toasts": "^0.6.5",
     "react-simplemde-editor": "^5.0.2",
     "remark": "14.0.1",
-    "remark-gfm": "^2.0.0",
+    "remark-gfm": "^3.0.0",
     "remark-html": "14.0.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.4",
