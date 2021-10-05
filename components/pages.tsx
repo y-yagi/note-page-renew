@@ -5,8 +5,8 @@ import { useCollection, deleteDocument } from "@nandorojo/swr-firestore";
 import Page from "../types/page";
 import Notebook from "../types/notebook";
 import { useUser } from "../lib/useUser";
-import ReactMarkdown from "react-markdown";
-import gfm from "remark-gfm";
+import DOMPurify from "dompurify";
+import marked from "marked";
 import {
   Divider,
   Header,
@@ -96,7 +96,11 @@ const Pages = () => {
                 Edit
               </Button>
             </Link>
-            <ReactMarkdown plugins={[gfm]} children={page.content} />
+            <div
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(marked(page.content)),
+              }}
+            ></div>
           </Tab.Pane>
         ),
       })
