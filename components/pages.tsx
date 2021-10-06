@@ -4,9 +4,8 @@ import { useRouter } from "next/router";
 import { useCollection, deleteDocument } from "@nandorojo/swr-firestore";
 import Page from "../types/page";
 import Notebook from "../types/notebook";
+import MakrkdownRender from "./markdown-renderer";
 import { useUser } from "../lib/useUser";
-import DOMPurify from "dompurify";
-import marked from "marked";
 import {
   Divider,
   Header,
@@ -16,6 +15,7 @@ import {
   Tab,
   TabProps,
 } from "semantic-ui-react";
+import MarkdownRenderer from "./markdown-renderer";
 
 interface NoteBookOption {
   key: string;
@@ -96,11 +96,7 @@ const Pages = () => {
                 Edit
               </Button>
             </Link>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(marked(page.content)),
-              }}
-            ></div>
+            <MarkdownRenderer content={page.content} />
           </Tab.Pane>
         ),
       })
