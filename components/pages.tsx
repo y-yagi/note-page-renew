@@ -4,8 +4,8 @@ import { useRouter } from "next/router";
 import { useCollection, deleteDocument } from "@nandorojo/swr-firestore";
 import Page from "../types/page";
 import Notebook from "../types/notebook";
-import MakrkdownRender from "./markdown-renderer";
 import { useUser } from "../lib/useUser";
+import MarkdownRenderer from "./markdown-renderer";
 import {
   Divider,
   Header,
@@ -15,7 +15,6 @@ import {
   Tab,
   TabProps,
 } from "semantic-ui-react";
-import MarkdownRenderer from "./markdown-renderer";
 
 interface NoteBookOption {
   key: string;
