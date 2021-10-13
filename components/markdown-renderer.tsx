@@ -7,6 +7,8 @@ interface Props {
 }
 
 const MarkdownRenderer = ({ content }: Props) => {
+  marked.setOptions({ breaks: true });
+
   return (
     <div
       dangerouslySetInnerHTML={{
