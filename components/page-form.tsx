@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
@@ -21,7 +21,7 @@ const SimpleMdeReact = dynamic(import("react-simplemde-editor"), {
 
 const PageForm: NextPage<Props> = ({ page, action }) => {
   const router = useRouter();
-  const [content, setContent] = useState(page.content);
+  let content = page.content;
 
   const handleKeyPress = (e: KeyboardEvent) => {
     if (page.id !== "" && e.ctrlKey && e.key === "s") {
@@ -39,7 +39,7 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
   };
 
   const onMDEchange = (value: string) => {
-    setContent(value);
+    content = value;
   };
 
   const simpleMDEOptions = useMemo(() => {
