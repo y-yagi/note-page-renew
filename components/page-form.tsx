@@ -28,10 +28,13 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
       e.preventDefault();
       let msg = "Content doesn't changed";
 
-      if (page.content !== content) {
-        action(page.name, content);
-        msg = "Updated!";
-      }
+      setTimeout(() => {
+        if (page.content !== content) {
+          action(page.name, content);
+          msg = "Updated!";
+        }
+      }, 500);
+
       setTimeout(() => {
         toast({ title: "info", description: msg });
       }, 1000);
@@ -40,7 +43,7 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
 
   const onMDEchange = useCallback((value: string) => {
     setContent(value);
-  },[]);
+  }, []);
 
   const simpleMDEOptions = useMemo(() => {
     return {
