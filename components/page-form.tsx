@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
@@ -38,9 +38,9 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
     }
   };
 
-  const onMDEchange = (value: string) => {
+  const onMDEchange = useCallback((value: string) => {
     setContent(value);
-  };
+  },[]);
 
   const simpleMDEOptions = useMemo(() => {
     return {
