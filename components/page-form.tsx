@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
@@ -21,26 +21,29 @@ const SimpleMdeReact = dynamic(import("react-simplemde-editor"), {
 
 const PageForm: NextPage<Props> = ({ page, action }) => {
   const router = useRouter();
-  let content = page.content;
+  const [content, setContent] = useState(page.content);
 
   const handleKeyPress = (e: KeyboardEvent) => {
     if (page.id !== "" && e.ctrlKey && e.key === "s") {
       e.preventDefault();
       let msg = "Content doesn't changed";
 
-      if (page.content !== content) {
-        action(page.name, content);
-        msg = "Updated!";
-      }
+      setTimeout(() => {
+        if (page.content !== content) {
+          action(page.name, content);
+          msg = "Updated!";
+        }
+      }, 500);
+
       setTimeout(() => {
         toast({ title: "info", description: msg });
       }, 1000);
     }
   };
 
-  const onMDEchange = (value: string) => {
-    content = value;
-  };
+  const onMDEchange = useCallback((value: string) => {
+    setContent(value);
+  }, []);
 
   const simpleMDEOptions = useMemo(() => {
     return {
