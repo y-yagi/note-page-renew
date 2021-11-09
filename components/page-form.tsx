@@ -33,6 +33,7 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
           action(page.name, content);
           msg = "Updated!";
         }
+        page.content = content
       }, 500);
 
       setTimeout(() => {
