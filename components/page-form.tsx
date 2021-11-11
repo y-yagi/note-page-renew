@@ -73,7 +73,7 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
       <Formik
         initialValues={{
           name: page.name,
-          content: page.content,
+          content: content,
         }}
         onSubmit={(values, { setSubmitting }) => {
           action(values["name"], content);
@@ -97,7 +97,7 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
             <Form.Field required>
               <label>Content</label>
               <SimpleMdeReact
-                value={values.content}
+                value={content}
                 onChange={onMDEchange}
                 options={simpleMDEOptions}
               />
