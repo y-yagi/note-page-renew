@@ -116,10 +116,9 @@ const Pages = () => {
     setNoteBookPath(data.value);
   }
 
-  function destroyNotebook() {
-    if (noteBookPath === "default") return "";
+  function destroyNotebook(data: Page[]) {
+    if (noteBookPath === "default" || data.length !== 0) return "";
 
-    // TODO: Should delete subcollection also?
     return (
       <Button
         type="submit"
@@ -159,7 +158,7 @@ const Pages = () => {
           onTabChange={handleTabChange}
         />
       </Segment>
-      {destroyNotebook()}
+      {destroyNotebook(data)}
     </>
   );
 };
