@@ -1,6 +1,5 @@
 import React from "react";
 import DOMPurify from "dompurify";
-// @ts-ignore
 import { marked } from "marked";
 
 interface Props {
