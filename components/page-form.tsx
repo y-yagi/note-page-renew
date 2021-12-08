@@ -21,6 +21,7 @@ const SimpleMdeReact = dynamic(import("react-simplemde-editor"), {
 
 const PageForm: NextPage<Props> = ({ page, action }) => {
   const router = useRouter();
+  const [name, setName] = useState(page.name);
   const [content, setContent] = useState(page.content);
 
   const handleKeyPress = (e: KeyboardEvent) => {
@@ -30,7 +31,7 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
 
       setTimeout(() => {
         if (page.content !== content) {
-          action(page.name, content);
+          action(name, content);
           msg = "Updated!";
         }
         page.content = content;
@@ -45,6 +46,13 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
   const onMDEchange = useCallback((value: string) => {
     setContent(value);
   }, []);
+
+  const onNameChange = useCallback(
+    (ev: React.ChangeEvent<HTMLInputElement>) => {
+      setName(ev.target.value);
+    },
+    []
+  );
 
   const simpleMDEOptions = useMemo(() => {
     return {
@@ -76,12 +84,12 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
           content: content,
         }}
         onSubmit={(values, { setSubmitting }) => {
-          action(values["name"], content);
+          action(name, content);
           router.push(`/?book=${page.noteBookId}`);
         }}
         enableReinitialize={true}
       >
-        {({ values, handleChange, handleSubmit, isSubmitting }) => (
+        {({ handleSubmit, isSubmitting }) => (
           <Form onSubmit={handleSubmit}>
             <Form.Field required>
               <label>Page Name</label>
@@ -89,8 +97,8 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
                 placeholder="Name"
                 required
                 name="name"
-                onChange={handleChange}
-                value={values.name}
+                onChange={onNameChange}
+                value={name}
                 data-testid="pagename"
               />
             </Form.Field>
