@@ -31,14 +31,14 @@
     "react-simplemde-editor": "^5.0.2",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.4",
-    "typescript": "^4.4.4"
+    "typescript": "^4.5.3"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.16.0",
     "@testing-library/react": "^12.1.2",
     "@types/classnames": "^2.3.1",
     "@types/dompurify": "^2.3.1",
-    "@types/jest": "^27.0.2",
+    "@types/jest": "^27.0.3",
     "@types/js-cookie": "^3.0.1",
     "@types/marked": "^4.0.1",
     "@types/node": "^16.11.11",
@@ -47,7 +47,7 @@
     "@types/react-linkify": "^1.0.1",
     "cypress": "^9.1.0",
     "eslint": "^7.32.0",
-    "eslint-config-next": "^12.0.3",
+    "eslint-config-next": "^12.0.7",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-unused-imports": "^1.1.5",
     "jest": "^27.4.2",
