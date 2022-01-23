@@ -1635,6 +1635,13 @@
   dependencies:
     "@types/tern" "*"
 
+"@types/codemirror@^5.60.4":
+  version "5.60.5"
+  resolved "https://registry.yarnpkg.com/@types/codemirror/-/codemirror-5.60.5.tgz#5b989a3b4bbe657458cf372c92b6bfda6061a2b7"
+  integrity sha512-TiECZmm8St5YxjFUp64LK0c8WU5bxMDt9YaAek1UqUb9swrSCoJhh92fWu1p3mTEqlHjhB5sY7OFBhWroJXZVg==
+  dependencies:
+    "@types/tern" "*"
+
 "@types/dompurify@^2.3.2":
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/@types/dompurify/-/dompurify-2.3.2.tgz#85e8fd9ab1d7d0d3078968682e458094d41a8ad6"
@@ -2571,10 +2578,10 @@ codemirror-spell-checker@1.1.2:
   dependencies:
     typo-js "*"
 
-codemirror@^5.61.0:
-  version "5.63.0"
-  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.63.0.tgz#070a699108badd9c118b7261ac2e9793acdbb149"
-  integrity sha512-KlLWRPggDg2rBD1Mx7/EqEhaBdy+ybBCVh/efgjBDsPpMeEu6MbTAJzIT4TuCzvmbTEgvKOGzVT6wdBTNusqrg==
+codemirror@^5.63.1:
+  version "5.65.0"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.65.0.tgz#50344359393579f526ca53797e510ff75477117f"
+  integrity sha512-gWEnHKEcz1Hyz7fsQWpK7P0sPI2/kSkRX2tc7DFA6TmZuDN75x/1ejnH/Pn8adYKrLEA1V2ww6L00GudHZbSKw==
 
 collect-v8-coverage@^1.0.0:
   version "1.0.1"
@@ -3035,16 +3042,16 @@ dompurify@^2.3.4:
   resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.3.4.tgz#1cf5cf0105ccb4debdf6db162525bd41e6ddacc6"
   integrity sha512-6BVcgOAVFXjI0JTjEvZy901Rghm+7fDQOrNIcxB4+gdhj6Kwp6T9VBhBY/AbagKHJocRkDYGd6wvI+p4/10xtQ==
 
-easymde@^2.15.0:
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/easymde/-/easymde-2.15.0.tgz#73667c4879d8687b07651d6259ee652bba5d0b00"
-  integrity sha512-9jMRIVvKt1d0UjRN45yotUYECAM4xvw0TTAQw8sYDONP++keWJVnd8Xrn+V+vQEN/v9/X0SWEoo1rFSgCooGpw==
+easymde@^2.16.1:
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/easymde/-/easymde-2.16.1.tgz#f4c2380312615cb33826f1a1fecfaa4022ff551a"
+  integrity sha512-FihYgjRsKfhGNk89SHSqxKLC4aJ1kfybPWW6iAmtb5GnXu+tnFPSzSaGBmk1RRlCuhFSjhF0SnIMGVPjEzkr6g==
   dependencies:
-    "@types/codemirror" "0.0.109"
-    "@types/marked" "^2.0.2"
-    codemirror "^5.61.0"
+    "@types/codemirror" "^5.60.4"
+    "@types/marked" "^4.0.1"
+    codemirror "^5.63.1"
     codemirror-spell-checker "1.1.2"
-    marked "^2.0.3"
+    marked "^4.0.10"
 
 ecc-jsbn@~0.1.1:
   version "0.1.2"
@@ -5225,15 +5232,10 @@ makeerror@1.0.x:
   dependencies:
     tmpl "1.0.x"
 
-marked@^2.0.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-2.1.3.tgz#bd017cef6431724fd4b27e0657f5ceb14bff3753"
-  integrity sha512-/Q+7MGzaETqifOMWYEA7HVMaZb4XbcRfaOzcSsHZEith83KGlvaSG33u0SKu89Mj5h+T8V2hM+8O45Qc5XTgwA==
-
-marked@^4.0.9:
-  version "4.0.9"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-4.0.9.tgz#96862d67bd31b4770917f01c93e1d9b3cc73ed96"
-  integrity sha512-HmoFvQwFLxNESeGupeOC+6CLb5WzcCWQmqvVetsErmrI3vrZ6gBumty5IP0ynLPR0zYSoVY7ITC1GffsYIGkog==
+marked@^4.0.10, marked@^4.0.9:
+  version "4.0.10"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-4.0.10.tgz#423e295385cc0c3a70fa495e0df68b007b879423"
+  integrity sha512-+QvuFj0nGgO970fySghXGmuw+Fd0gD2x3+MqCWLIPf5oxdv1Ka6b2q+z9RP01P/IaKPMEramy+7cNy/Lw8c3hw==
 
 material-design-lite@^1.2.0:
   version "1.3.0"
