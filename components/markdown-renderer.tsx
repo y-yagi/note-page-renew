@@ -11,7 +11,6 @@ const MarkdownRenderer = ({ content }: Props) => {
   const renderer = new marked.Renderer();
   const linkRenderer = renderer.link;
   renderer.link = (href, title, text) => {
-    console.info(href);
     const localLink = href?.startsWith(
       `${location.protocol}//${location.hostname}`
     );
