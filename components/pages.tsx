@@ -27,7 +27,11 @@ const Pages = () => {
   const notebookCollection = `notebooks-renew/${user?.id}/notebooks/`;
   const router = useRouter();
   const [noteBookPath, setNoteBookPath] = useState(() => {
-    return router.query["book"] || "default";
+    return (
+      router.query["book"] ||
+      window?.sessionStorage?.getItem("book") ||
+      "default"
+    );
   });
   const [tabActiveIndex, setTabActiveIndex] = useState(0);
 

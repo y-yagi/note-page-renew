@@ -23,6 +23,7 @@ const Edit = () => {
       content: content,
       updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
+    window?.sessionStorage.setItem("book", book as string);
   }
 
   if (error) return <p>Error: {JSON.stringify(error)}</p>;

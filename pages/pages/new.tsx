@@ -42,6 +42,7 @@ const New = () => {
       createdAt: timestamp(),
       updatedAt: timestamp(),
     });
+    window?.sessionStorage.setItem("book", book as string);
   }
 
   return (
