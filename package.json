@@ -41,7 +41,7 @@
     "@types/jest": "^28.1.4",
     "@types/js-cookie": "^3.0.2",
     "@types/marked": "^4.0.3",
-    "@types/node": "^18.6.1",
+    "@types/node": "^18.6.5",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.6",
     "@types/react-linkify": "^1.0.1",
