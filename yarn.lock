@@ -1495,14 +1495,7 @@
   dependencies:
     classnames "*"
 
-"@types/codemirror@0.0.109":
-  version "0.0.109"
-  resolved "https://registry.yarnpkg.com/@types/codemirror/-/codemirror-0.0.109.tgz#89d575ff1c7b462c4c3b8654f8bb38e5622e9036"
-  integrity sha512-cSdiHeeLjvGn649lRTNeYrVCDOgDrtP+bDDSFDd1TF+i0jKGPDRozno2NOJ9lTniso+taiv4kiVS8dgM8Jm5lg==
-  dependencies:
-    "@types/tern" "*"
-
-"@types/codemirror@^5.60.4":
+"@types/codemirror@^5.60.4", "@types/codemirror@~5.60.5":
   version "5.60.5"
   resolved "https://registry.yarnpkg.com/@types/codemirror/-/codemirror-5.60.5.tgz#5b989a3b4bbe657458cf372c92b6bfda6061a2b7"
   integrity sha512-TiECZmm8St5YxjFUp64LK0c8WU5bxMDt9YaAek1UqUb9swrSCoJhh92fWu1p3mTEqlHjhB5sY7OFBhWroJXZVg==
@@ -1569,11 +1562,6 @@
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.1.tgz#459c65fa1867dafe6a8f322c4c51695663cc55e9"
   integrity sha512-5tXH6Bx/kNGd3MgffdmP4dy2Z+G4eaXw0SE81Tq3BNadtnMR5/ySMzX4SLEzHJzSmPNn4HIdpQsBvXMUykr58w==
-
-"@types/marked@^2.0.2":
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/@types/marked/-/marked-2.0.5.tgz#453e27f1e97199d45bb25297b0dd2b9bbc1e05ea"
-  integrity sha512-shRZ7XnYFD/8n8zSjKvFdto1QNSf4tONZIlNEZGrJe8GsOE8DL/hG1Hbl8gZlfLnjS7+f5tZGIaTgfpyW38h4w==
 
 "@types/marked@^4.0.6", "@types/marked@^4.0.7":
   version "4.0.7"
@@ -4765,13 +4753,12 @@ react-semantic-toasts@^0.6.6:
   resolved "https://registry.yarnpkg.com/react-semantic-toasts/-/react-semantic-toasts-0.6.6.tgz#57f103903b2b4edb8303a82c4f0220128f89272f"
   integrity sha512-sRSL3aikNSVxxhLai785UtSEaSZw3/pxQrPJVmLs83VpAkJyfBhy8RKxxBej0FGr+ah8qCRGHDJUPccNoraHKA==
 
-react-simplemde-editor@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/react-simplemde-editor/-/react-simplemde-editor-5.0.2.tgz#0e18cdc8f1e15824c595e6328d6808fcbceb75ce"
-  integrity sha512-yaqZSaUBf6B0kQY0mH8WP/nHnvJFz48aO8cMYCL1e/AFiuB/H8UDuyZFP9/exOtwVpaG373HYR1YedKMtCh+Kw==
+react-simplemde-editor@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/react-simplemde-editor/-/react-simplemde-editor-5.2.0.tgz#7a4c8b97e4989cb129b45ba140145d71bdc0684e"
+  integrity sha512-GkTg1MlQHVK2Rks++7sjuQr/GVS/xm6y+HchZ4GPBWrhcgLieh4CjK04GTKbsfYorSRYKa0n37rtNSJmOzEDkQ==
   dependencies:
-    "@types/codemirror" "0.0.109"
-    "@types/marked" "^2.0.2"
+    "@types/codemirror" "~5.60.5"
 
 react@^18.2.0:
   version "18.2.0"
