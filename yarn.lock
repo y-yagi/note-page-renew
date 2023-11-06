@@ -1600,10 +1600,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-linkify@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@types/react-linkify/-/react-linkify-1.0.1.tgz#4ece351faef22bfde1280b6d9ace5e88683a74d4"
-  integrity sha512-qPxYwjB41ezoKdLXs0MrQ1FnhF3apyyxf3J7WVQQCBu/GyZQAW7Y3TY4317jdh0450QJ4fLqj0rnhIJvFZOamQ==
+"@types/react-linkify@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@types/react-linkify/-/react-linkify-1.0.3.tgz#a69bf48a3a4ed86a89820f605a20cde65f7de4b5"
+  integrity sha512-JX3BMlloFD4zjKLehZiio9NO+UNyTjseC6qIZYXpiTSOcFuxqBI+fcbnjf/Bpltex8DMnCaod9YK+ooDlOhg5A==
   dependencies:
     "@types/react" "*"
 
