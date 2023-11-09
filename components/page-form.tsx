@@ -51,7 +51,7 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
     (ev: React.ChangeEvent<HTMLInputElement>) => {
       setName(ev.target.value);
     },
-    []
+    [],
   );
 
   const simpleMDEOptions = useMemo(() => {

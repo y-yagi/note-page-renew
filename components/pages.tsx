@@ -39,7 +39,7 @@ const Pages = () => {
     `${notebookCollection}${noteBookPath}/pages`,
     {
       orderBy: ["updatedAt", "desc"],
-    }
+    },
   );
 
   const { data: notebooks } = useCollection<Notebook>(notebookCollection, {});
@@ -88,7 +88,7 @@ const Pages = () => {
                   window.confirm("Are you sure you wish to delete this page?")
                 )
                   deleteDocument(
-                    `${notebookCollection}${noteBookPath}/pages/${page.id}`
+                    `${notebookCollection}${noteBookPath}/pages/${page.id}`,
                   );
               }}
             >
@@ -102,7 +102,7 @@ const Pages = () => {
             <MarkdownRenderer content={page.content} />
           </Tab.Pane>
         ),
-      })
+      }),
     );
 
     return panes;

@@ -25,12 +25,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           function (registration) {
             console.log(
               "Service Worker registration successful with scope: ",
-              registration.scope
+              registration.scope,
             );
           },
           function (err) {
             console.log("Service Worker registration failed: ", err);
-          }
+          },
         );
       });
     }
