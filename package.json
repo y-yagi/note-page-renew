@@ -18,7 +18,7 @@
     "dompurify": "^3.0.6",
     "easymde": "^2.18.0",
     "firebase": "^8.10.1",
-    "formik": "^2.4.2",
+    "formik": "^2.4.5",
     "gray-matter": "4.0.3",
     "js-cookie": "^3.0.5",
     "marked": "^9.1.3",
