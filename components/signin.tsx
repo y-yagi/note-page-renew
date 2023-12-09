@@ -4,10 +4,7 @@ const Signin = () => {
   return (
     <>
       <p>
-        Please signed in.{" "}
-        <Link href={"/auth"}>
-          <a>Sign in</a>
-        </Link>
+        Please signed in. <Link href={"/auth"}>Sign in</Link>
       </p>
     </>
   );
