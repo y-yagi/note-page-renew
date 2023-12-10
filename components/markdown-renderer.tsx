@@ -28,7 +28,7 @@ const MarkdownRenderer = ({ content }: Props) => {
   return (
     <div
       dangerouslySetInnerHTML={{
-        __html: DOMPurify.sanitize(marked(content, { renderer }), {
+        __html: DOMPurify.sanitize(marked(content, { renderer }) as string, {
           ADD_ATTR: ["target"],
         }),
       }}
