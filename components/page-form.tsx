@@ -9,6 +9,7 @@ import { SemanticToastContainer, toast } from "react-semantic-toasts";
 import "easymde/dist/easymde.min.css";
 import "react-semantic-toasts/styles/react-semantic-alert.css";
 import Page from "../types/page";
+import { useFormGuard } from "../lib/useFormGuard";
 
 interface Props {
   page: Page;
@@ -71,6 +72,12 @@ const PageForm: NextPage<Props> = ({ page, action }) => {
       window.removeEventListener("keydown", handleKeyPress);
     };
   });
+
+  const isContentUpdated = () => {
+    return page.content !== content;
+  };
+
+  useFormGuard(isContentUpdated());
 
   return (
     <section>
